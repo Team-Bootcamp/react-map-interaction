@@ -279,8 +279,8 @@ class MapInteraction extends Component {
   translatedOrigin(translation = this.state.translation) {
     const clientOffset = this.getContainerBoundingClientRect();
     return {
-      x: clientOffset.left + translation.x,
-      y: clientOffset.top + translation.y
+      x: (clientOffset.left + clientOffset.right) / 2 + translation.x,
+      y: (clientOffset.top + clientOffset.bottom) / 2 + translation.y
     };
   }
 
